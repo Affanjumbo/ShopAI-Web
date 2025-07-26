@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings | ShopAI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <link rel="stylesheet" href="assets/settings.css">
+</head>
+<body>
+    <!-- Account Header -->
+    <header class="account-header">
+        <div class="container account-header-content">
+            <div class="user-profile-header">
+                <img src="images/person.jpg" alt="User Avatar" class="user-avatar">
+                <div class="user-info">
+                    <h1>Affan Ahmed</h1>
+                    <div class="account-actions">
+                        <a href="account.html" class="btn btn-outline"><i class="fas fa-arrow-left"></i> Back to Account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+   
+    
+    <!-- Navigation -->
+    <nav class="account-nav">
+        <div class="container">
+            <ul>
+                <li><a href="#profile" class="active"><i class="fas fa-user"></i> Profile</a></li>
+                <li><a href="#security"><i class="fas fa-shield-alt"></i> Security</a></li>
+                <li><a href="#notifications"><i class="fas fa-bell"></i> Notifications</a></li>
+                <li><a href="#payments"><i class="fas fa-credit-card"></i> Payments</a></li>
+                <li><a href="#privacy"><i class="fas fa-lock"></i> Privacy</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Settings Content -->
+    <main class="container settings-container">
+        <!-- Settings Sidebar -->
+        <aside class="settings-sidebar">
+            <ul class="settings-menu">
+                <li><a href="#profile" class="active"><i class="fas fa-user"></i> Profile</a></li>
+                <li><a href="#security"><i class="fas fa-shield-alt"></i> Security</a></li>
+                <li><a href="#notifications"><i class="fas fa-bell"></i> Notifications</a></li>
+                <li><a href="#payments"><i class="fas fa-credit-card"></i> Payment Methods</a></li>
+                <li><a href="#privacy"><i class="fas fa-lock"></i> Privacy</a></li>
+                <li><a href="#delete"><i class="fas fa-trash"></i> Delete Account</a></li>
+                <div class="sidebar-footer">
+                    <a href="logout.html" class="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </div>
+            </ul>
+            
+        </aside>
+        
+        <!-- Settings Content Area -->
+        <div class="settings-content">
+            <!-- Profile Settings -->
+            <section id="profile-section" class="settings-section active">
+                <h2 class="section-title">Profile Settings</h2>
+                
+                <form class="profile-form">
+                    <div class="avatar-upload">
+                        <img src="images/person.jpg" alt="Profile Preview" class="avatar-preview" id="avatar-preview">
+                        <div>
+                            <label for="avatar-upload" class="btn btn-primary"><i class="fas fa-upload"></i> Upload Photo</label>
+                            <input type="file" id="avatar-upload" accept="image/*" style="display: none;">
+                            <p class="text-muted" style="margin-top: 0.5rem; font-size: 0.8rem;">JPG, GIF or PNG. Max size 2MB</p>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="full-name">Full Name</label>
+                        <input type="text" id="full-name" value="Affan Ahmed">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" value="affanjambo@gmail.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" value="+92 3202 129483">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bio">Bio</label>
+                        <textarea id="bio" placeholder="Tell us about yourself">Tech enthusiast and web developer from Pakistan</textarea>
+                    </div>
+                    
+                    <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select id="gender">
+                                <option value="male" selected>Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="dob">Date of Birth</label>
+                            <input type="date" id="dob" value="1995-01-15">
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions" style="margin-top: 2rem;">
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                        <button type="button" class="btn btn-outline" style="color: var(--secondary); border-color: var(--secondary);">Cancel</button>
+                    </div>
+                </form>
+            </section>
+            
+            <!-- Security Settings -->
+            <section id="security-section" class="settings-section">
+                <h2 class="section-title">Security Settings</h2>
+                
+                <div class="security-alert">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <div>
+                        <h4>Security Alert</h4>
+                        <p>Your account security is medium. We recommend enabling two-factor authentication.</p>
+                    </div>
+                </div>
+                
+                <div class="security-options">
+                    <div class="security-option" style="margin-bottom: 2rem;">
+                        <h3 style="margin-bottom: 1rem;">Password</h3>
+                        <button class="btn btn-primary" id="change-password-btn"><i class="fas fa-key"></i> Change Password</button>
+                        
+                        <div id="password-form" style="display: none; margin-top: 1.5rem;">
+                            <div class="form-group">
+                                <label for="current-password">Current Password</label>
+                                <input type="password" id="current-password">
+                            </div>
+                            <div class="form-group">
+                                <label for="new-password">New Password</label>
+                                <input type="password" id="new-password">
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm-password">Confirm New Password</label>
+                                <input type="password" id="confirm-password">
+                            </div>
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-primary">Update Password</button>
+                                <button type="button" class="btn btn-outline" style="color: var(--secondary); border-color: var(--secondary);" id="cancel-password">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="security-option" style="margin-bottom: 2rem;">
+                        <h3 style="margin-bottom: 1rem;">Two-Factor Authentication</h3>
+                        <div class="privacy-option">
+                            <span>Enable 2FA for extra security</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-light);">Requires authentication app like Google Authenticator</p>
+                    </div>
+                    
+                    <div class="security-option">
+                        <h3 style="margin-bottom: 1rem;">Active Devices</h3>
+                        <ul class="device-list">
+                            <li class="device-item">
+                                <div class="device-info">
+                                    <i class="fas fa-laptop device-icon"></i>
+                                    <div>
+                                        <h4>Windows PC (Chrome)</h4>
+                                        <p>Last active: Today at 2:45 PM</p>
+                                        <p>IP: 192.168.1.1 • Lahore, Pakistan</p>
+                                    </div>
+                                </div>
+                                <button class="btn btn-outline" style="color: var(--secondary); border-color: var(--secondary);">Logout</button>
+                            </li>
+                            <li class="device-item">
+                                <div class="device-info">
+                                    <i class="fas fa-mobile-alt device-icon"></i>
+                                    <div>
+                                        <h4>iPhone 13 (Safari)</h4>
+                                        <p>Last active: Yesterday at 9:30 AM</p>
+                                        <p>IP: 192.168.1.2 • Lahore, Pakistan</p>
+                                    </div>
+                                </div>
+                                <button class="btn btn-outline" style="color: var(--secondary); border-color: var(--secondary);">Logout</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Notification Settings -->
+            <section id="notifications-section" class="settings-section">
+                <h2 class="section-title">Notification Settings</h2>
+                
+                <div class="notification-category">
+                    <h3 style="margin-bottom: 1rem;">Email Notifications</h3>
+                    <div class="notification-options">
+                        <div class="notification-option">
+                            <div class="privacy-option" style="margin-bottom: 1rem;">
+                                <span>Order Updates</span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <p style="font-size: 0.9rem; color: var(--text-light);">Get updates about your orders and shipments</p>
+                        </div>
+                        <div class="notification-option">
+                            <div class="privacy-option" style="margin-bottom: 1rem;">
+                                <span>Promotions</span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <p style="font-size: 0.9rem; color: var(--text-light);">Receive special offers and discounts</p>
+                        </div>
+                        <div class="notification-option">
+                            <div class="privacy-option" style="margin-bottom: 1rem;">
+                                <span>Newsletter</span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                            <p style="font-size: 0.9rem; color: var(--text-light);">Weekly newsletter with new products</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="notification-category">
+                    <h3 style="margin-bottom: 1rem;">Push Notifications</h3>
+                    <div class="notification-options">
+                        <div class="notification-option">
+                            <div class="privacy-option" style="margin-bottom: 1rem;">
+                                <span>Order Updates</span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="notification-option">
+                            <div class="privacy-option" style="margin-bottom: 1rem;">
+                                <span>Price Drops</span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="notification-option">
+                            <div class="privacy-option" style="margin-bottom: 1rem;">
+                                <span>New Features</span>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-actions" style="margin-top: 2rem;">
+                    <button type="button" class="btn btn-primary">Save Preferences</button>
+                </div>
+            </section>
+            
+            <!-- Payment Methods -->
+            <section id="payments-section" class="settings-section">
+                <h2 class="section-title">Payment Methods</h2>
+                
+                <div class="payment-methods">
+                    <div class="payment-card payment-card-default">
+                        <div class="payment-card-info">
+                            <i class="fab fa-cc-visa payment-card-icon"></i>
+                            <div>
+                                <h4>Visa ending in 4242</h4>
+                                <p>Expires 04/2025 • Default payment method</p>
+                            </div>
+                        </div>
+                        <button class="btn btn-outline" style="color: var(--secondary); border-color: var(--secondary);">Remove</button>
+                    </div>
+                    
+                    <div class="payment-card">
+                        <div class="payment-card-info">
+                            <i class="fab fa-cc-mastercard payment-card-icon"></i>
+                            <div>
+                                <h4>Mastercard ending in 5555</h4>
+                                <p>Expires 12/2024</p>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="btn btn-outline" style="color: var(--primary); border-color: var(--primary); margin-right: 0.5rem;">Set Default</button>
+                            <button class="btn btn-outline" style="color: var(--secondary); border-color: var(--secondary);">Remove</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="btn btn-primary" style="margin-top: 1.5rem;"><i class="fas fa-plus"></i> Add Payment Method</button>
+                
+                <div id="add-payment-form" style="display: none; margin-top: 2rem;">
+                    <h3 style="margin-bottom: 1rem;">Add New Payment Method</h3>
+                    <div class="form-group">
+                        <label for="card-number">Card Number</label>
+                        <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+                    </div>
+                    <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label for="expiry-date">Expiry Date</label>
+                            <input type="text" id="expiry-date" placeholder="MM/YY">
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" placeholder="123">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="card-name">Name on Card</label>
+                        <input type="text" id="card-name" placeholder="Affan Ahmed">
+                    </div>
+                    <div class="form-group">
+                        <input type="checkbox" id="set-default-card">
+                        <label for="set-default-card">Set as default payment method</label>
+                    </div>
+                    <div class="form-actions" style="margin-top: 1rem;">
+                        <button type="button" class="btn btn-primary">Add Card</button>
+                        <button type="button" class="btn btn-outline" style="color: var(--secondary); border-color: var(--secondary);" id="cancel-add-payment">Cancel</button>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Privacy Settings -->
+            <section id="privacy-section" class="settings-section">
+                <h2 class="section-title">Privacy Settings</h2>
+                
+                <div class="privacy-options">
+                    <div class="privacy-option" style="margin-bottom: 1.5rem;">
+                        <div>
+                            <h4 style="margin-bottom: 0.5rem;">Profile Visibility</h4>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">Control who can see your profile and activity</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="privacy-option" style="margin-bottom: 1.5rem;">
+                        <div>
+                            <h4 style="margin-bottom: 0.5rem;">Personalized Ads</h4>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">Allow us to show you relevant ads based on your activity</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="privacy-option" style="margin-bottom: 1.5rem;">
+                        <div>
+                            <h4 style="margin-bottom: 0.5rem;">Data Sharing</h4>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">Share anonymous usage data to help improve our services</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="privacy-option" style="margin-bottom: 1.5rem;">
+                        <div>
+                            <h4 style="margin-bottom: 0.5rem;">Search Visibility</h4>
+                            <p style="color: var(--text-light); font-size: 0.9rem;">Allow search engines to link to your profile</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-actions" style="margin-top: 2rem;">
+                    <button type="button" class="btn btn-primary">Save Privacy Settings</button>
+                </div>
+            </section>
+            
+            <!-- More sections can be added here -->
+        </div>
+    </main>
+    
+     <!-- Footer Section -->
+     <footer class="site-footer">
+        <div class="footer-container">
+          <!-- Payment Methods -->
+          <div class="footer-section payment-methods">
+            <h3 class="footer-heading">Payment Methods</h3>
+            <ul class="footer-list">
+              <li>JazzCash</li>
+              <li>EasyPaisa</li>
+              <li>Cash on Delivery</li>
+            </ul>
+          </div>
+  
+          <!-- Social Media -->
+          <div class="footer-section social-media">
+            <h3 class="footer-heading">Follow Us</h3>
+            <div class="social-icons">
+              <a href="https://instagram.com" target="_blank" class="social-link">
+                <img src="images/instagram.jpeg" alt="Instagram" width="32" />
+              </a>
+              <a href="https://facebook.com" target="_blank" class="social-link">
+                <img src="images/facebook.png" alt="Facebook" width="32" />
+              </a>
+              <a href="https://twitter.com" target="_blank" class="social-link">
+                <img src="images/twiter.png" alt="Twitter" width="32" />
+              </a>
+            </div>
+          </div>
+  
+          <!-- Contact Info -->
+          <div class="footer-section contact-info">
+            <h3 class="footer-heading">Contact Us</h3>
+            <ul class="footer-list">
+              <li><i class="fas fa-envelope"></i> support@shopai.com</li>
+              <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+              <li>
+                <i class="fas fa-map-marker-alt"></i> 123 ShopAI Street, Tech City
+              </li>
+            </ul>
+          </div>
+  
+          <!-- Newsletter -->
+          <div class="footer-section newsletter">
+            <h3 class="footer-heading">Newsletter</h3>
+            <p>Subscribe for updates and offers</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email address" required />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+  
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <p>&copy; 2025 ShopAI. All rights reserved.</p>
+        </div>
+      </footer>
+      <script src="js/settings.js"></script>
+</body>
+</html>

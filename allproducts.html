@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Products</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #ffffff, #f7f7f7);
+            color: #333;
+        }
+
+        header {
+            background-color: #343a40;
+            padding: 16px 32px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        header nav a {
+            color: #ffffffcc;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: #ffffff;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 28px;
+            margin-top: 30px;
+            font-weight: 600;
+        }
+
+        .products-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 30px;
+            gap: 25px;
+        }
+
+        .product-card {
+            width: 260px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 32px rgba(0,0,0,0.1);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .product-details {
+            padding: 16px;
+        }
+
+        .product-details h4 {
+            margin: 0 0 10px;
+            font-size: 18px;
+            color: #222;
+        }
+
+        .product-details p {
+            font-size: 13px;
+            color: #666;
+            margin: 0 0 10px;
+        }
+
+        .product-price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #dc3545;
+            margin: 10px 0;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #ffc107;
+            color: #222;
+            font-size: 12px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .action-buttons button {
+            flex: 1;
+            padding: 6px;
+            font-size: 13px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .add-to-cart {
+            background-color: #28a745;
+        }
+
+        .buy-now {
+            background-color: #007bff;
+        }
+
+        @media screen and (max-width: 600px) {
+            .products-container {
+                flex-direction: column;
+                align-items: center;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>ShopAI</h1>
+        <nav>
+            <a href="customerpage.html">Home</a>
+            <a href="my-cart.html">My Cart</a>
+            <a href="profile.html">Profile</a>
+        </nav>
+    </header>
+
+    <div class="section-title">All Recommended Products</div>
+
+    <main class="products-container" id="products-container">
+        <!-- Products will be injected here -->
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const token = localStorage.getItem('token');
+            const customerId = localStorage.getItem('customerId');
+
+            if (!token || !customerId) {
+                alert('Please login first.');
+                window.location.href = 'login.html';
+                return;
+            }
+
+            const backendUrl = 'https://localhost:7273';
+            const headers = {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            };
+
+            try {
+                const response = await fetch(`${backendUrl}/ai/AIFeatures/recommend?customer_id=${customerId}`, {
+                    method: 'POST',
+                    headers: headers
+                });
+
+                if (!response.ok) {
+                    const errorText = await response.text();
+                    console.error("Server Error:", response.status, errorText);
+                    throw new Error("Network response was not ok");
+                }
+
+                const data = await response.json();
+
+                if (!data || !data.recommended_products) {
+                    throw new Error("Invalid response structure");
+                }
+
+                const products = data.recommended_products;
+                const container = document.getElementById('products-container');
+                container.innerHTML = '';
+
+                products.forEach(product => {
+                    const imageUrl = product.ProductImage.startsWith('/')
+                        ? backendUrl + product.ProductImage
+                        : backendUrl + '/' + product.ProductImage;
+
+                    const card = document.createElement('div');
+                    card.className = 'product-card';
+
+                    const cardInnerHTML = `
+                        <div class="product-badge">${product.CategoryName}</div>
+
+                        <img src="${imageUrl}" alt="${product.Name}">
+
+                        <div class="product-details">
+                            <h4>${product.Name}</h4>
+                            <p>${product.Description}</p>
+                            <div class="product-price">Rs. ${product.Price}</div>
+                            <div class="action-buttons">
+                                <button class="add-to-cart">Add</button>
+                                <button class="buy-now">Buy</button>
+                            </div>
+                        </div>
+                    `;
+
+                    card.innerHTML = cardInnerHTML;
+                    container.appendChild(card);
+
+                    const addBtn = card.querySelector('.add-to-cart');
+                    const buyBtn = card.querySelector('.buy-now');
+
+                    addBtn.addEventListener('click', async () => {
+                        try {
+                            const cartResponse = await fetch(`${backendUrl}/api/Carts/AddToCart`, {
+                                method: 'POST',
+                                headers: headers,
+                                body: JSON.stringify({
+                                    CustomerId: parseInt(customerId),
+                                    ProductId: product.ProductId,
+                                    Quantity: 1
+                                })
+                            });
+
+                            if (!cartResponse.ok) {
+                                const msg = await cartResponse.text();
+                                throw new Error(msg);
+                            }
+
+                            alert("Product added to cart.");
+                        } catch (err) {
+                            console.error("Add to cart failed:", err);
+                            alert("Failed to add product to cart.");
+                        }
+                    });
+
+                    buyBtn.addEventListener('click', async () => {
+                        try {
+                            const res = await fetch(`${backendUrl}/api/Carts/AddToCart`, {
+                                method: 'POST',
+                                headers: headers,
+                                body: JSON.stringify({
+                                    CustomerId: parseInt(customerId),
+                                    ProductId: product.ProductId,
+                                    Quantity: 1
+                                })
+                            });
+
+                            if (!res.ok) {
+                                const msg = await res.text();
+                                throw new Error(msg);
+                            }
+
+                            window.location.href = 'my-cart.html';
+                        } catch (err) {
+                            console.error("Buy now failed:", err);
+                            alert("Failed to proceed with purchase.");
+                        }
+                    });
+                });
+            } catch (error) {
+                console.error("Error fetching AI recommendations:", error);
+                alert("Could not load recommended products. Please try again.");
+            }
+        });
+    </script>
+
+</body>
+</html>

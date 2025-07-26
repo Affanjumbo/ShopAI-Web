@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard | ShopAI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/customerpage.css">
+</head>
+<body>
+    <div class="dashboard-container">
+       <!-- Sidebar Navigation -->
+<aside class="sidebar">
+    <div class="logo-container">
+        <img src="images/logo.png" alt="" />
+        ShopAI
+    </div>
+    <nav class="sidebar-nav">
+        <ul>
+            <li class="active">
+                <a href="customerpage.html">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+                    <li class="dropdown">
+                        <a href="category.html">
+                            <i class="fas fa-th-large"></i>
+                            <span>Categories</span>
+                            <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </a>
+                        <ul class="dropdown-menu" id="categories-dropdown">
+                            <li><a href="#" class="category-filter" data-category-id="all">All Categories</a></li>
+                            <!-- Categories will be loaded here dynamically -->
+                            <li class="loading-categories">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <span>Loading categories...</span>
+                            </li>
+                        </ul>
+                    </li>
+
+              <li>
+                <a href="#">
+                  <i class="fas fa-shopping-cart"></i>
+                  <span>My Cart</span>
+                </a>
+              </li>
+              
+            <li>
+                <a href="#">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Expense Manager</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                   <i class="fas fa-comments"></i>
+                    <span>Chat With Us</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="sidebar-footer">
+        <a href="logout.html" class="logout-btn">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span>
+        </a>
+    </div>
+</aside>
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Navigation Bar -->
+            <header class="top-nav">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search products...">
+                </div>
+                <div class="user-actions">
+                    <div class="notification">
+                        <a href="my-cart.html">
+                            <i class="fas fa-bell"></i>
+                        </a>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <img src="images/person.jpg" alt="User">
+                        <span>Affan Ahmed</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="content-area">
+                <div class="welcome-banner">
+                    <h2>Welcome Back, Affan Ahmed ! </h2>
+                    <p>Here's what's happening with your ShopAI experience today</p>
+                </div>
+
+                  <!--Service Features-->
+    <div class="service-features">
+        <div class="feature">
+          <i class="fas fa-check-circle"></i>
+          <span>Quality Product</span>
+        </div>
+        <div class="feature">
+          <i class="fas fa-truck"></i>
+          <span>Free Shipping</span>
+        </div>
+        <div class="feature">
+          <i class="fas fa-exchange-alt"></i>
+          <span>14-Day Return</span>
+        </div>
+        <div class="feature">
+          <i class="fas fa-headset"></i>
+          <span>24/7 Support</span>
+        </div>
+      </div>
+   <!-- Join the App Section -->
+   <section class="join-app">
+    <div class="join-app-content">
+      <h2>Join the ShopAI App</h2>
+      <p>
+        Experience the full potential of our platform by joining the ShopAI
+        app!
+      </p>
+      <a href="https://link-to-app" class="btn app-btn">Join the App</a>
+    </div>
+    <div class="join-app-image">
+      <img src="images/app.webp" alt="ShopAI Mobile App" />
+    </div>
+  </section>
+
+   <!--Featured Products-->
+   <section class="featured-products">
+    <h2>Featured Products</h2>
+    <div class="featured-products-slider">
+      <div
+        class="slide active"
+        style="background-image: url('images/fproduct1.jpg')"
+      >
+        <div class="product-content">
+          <h1>Summer Collection 2025</h1>
+          <p>Discover our new arrivals with exclusive discounts</p>
+          <a href="shop.html" class="btn">Shop Now</a>
+        </div>
+      </div>
+      <div
+        class="slide"
+        style="background-image: url('images/fproduct3.jpg')"
+      >
+        <div class="product-content">
+          <h1>Winter Essentials</h1>
+          <p>Stay warm with our premium winter collection</p>
+          <a href="shop.html" class="btn">Explore</a>
+        </div>
+      </div>
+      <div
+        class="slide"
+        style="background-image: url('images/fproduct2.jpg')"
+      >
+        <div class="product-content">
+          <h1>Electronics Sale</h1>
+          <p>Up to 40% off on all gadgets</p>
+          <a href="shop.html" class="btn">View Deals</a>
+        </div>
+      </div>
+      <div
+        class="slide"
+        style="background-image: url('images/fproduct4.jpg')"
+      >
+        <div class="product-content">
+          <h1>New Arrivals</h1>
+          <p>Fresh styles added daily</p>
+          <a href="shop.html" class="btn">Discover</a>
+        </div>
+      </div>
+    </div>
+    <div class="slider-controls">
+      <button class="prev-slide"><i class="fas fa-chevron-left"></i></button>
+      <div class="slide-dots"></div>
+      <button class="next-slide"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </section>
+        
+                <!-- Recommended Products -->
+                <section class="recommended-section">
+    <div class="section-header">
+        <h3>Recommended For You</h3>
+        <a href="allproducts.html" class="view-all">View All</a>
+    </div>
+    <div class="products-grid" id="recommendedProductsContainer"></div>
+</section>
+
+
+                <!-- Recently Viewed -->
+                
+            </div>
+        </main>
+    </div>
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="footer-container">
+          <!-- Payment Methods -->
+          <div class="footer-section payment-methods">
+            <h3 class="footer-heading">Payment Methods</h3>
+            <ul class="footer-list">
+              <li>JazzCash</li>
+              <li>EasyPaisa</li>
+              <li>Cash on Delivery</li>
+            </ul>
+          </div>
+  
+          <!-- Social Media -->
+          <div class="footer-section social-media">
+            <h3 class="footer-heading">Follow Us</h3>
+            <div class="social-icons">
+              <a href="https://instagram.com" target="_blank" class="social-link">
+                <img src="images/instagram.jpeg" alt="Instagram" width="32" />
+              </a>
+              <a href="https://facebook.com" target="_blank" class="social-link">
+                <img src="images/facebook.png" alt="Facebook" width="32" />
+              </a>
+              <a href="https://twitter.com" target="_blank" class="social-link">
+                <img src="images/twiter.png" alt="Twitter" width="32" />
+              </a>
+            </div>
+          </div>
+  
+          <!-- Contact Info -->
+          <div class="footer-section contact-info">
+            <h3 class="footer-heading">Contact Us</h3>
+            <ul class="footer-list">
+              <li><i class="fas fa-envelope"></i> funfacts5454@gmail.com</li>
+              <li><i class="fas fa-phone"></i> +923060406309</li>
+              <li>
+                <i class="fas fa-map-marker-alt"></i> 123 ShopAI Street, Tech City
+              </li>
+            </ul>
+          </div>
+  
+          <!-- Newsletter -->
+          <div class="footer-section newsletter">
+            <h3 class="footer-heading">Newsletter</h3>
+            <p>Subscribe for updates and offers</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email address" required />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+  
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <p>&copy; 2025 ShopAI. All rights reserved.</p>
+        </div>
+      </footer>
+<!-- Popup Modal Container -->
+<div id="productsModal" style="display: none; position: fixed; top: 0; left: 0; 
+    width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 9999;">
+    
+    <div style="background: white; margin: 5% auto; padding: 20px; 
+        width: 90%; max-width: 1200px; border-radius: 8px; position: relative;">
+        
+        <button onclick="closeModal()" 
+            style="position: absolute; top: 10px; right: 15px; font-size: 20px;">✖</button>
+        
+        <!-- Injected product cards will appear here -->
+        <div id="modalContent"></div>
+    </div>
+</div>
+
+      
+
+    <script src="js/customerpage.js"></script>
+
+    <script src="js/categories.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', async () => {
+    const token = localStorage.getItem('token');
+    const customerId = localStorage.getItem('customerId');
+
+    if (!token || !customerId) {
+        alert('Please login first.');
+        window.location.href = 'login.html';
+        return;
+    }
+
+    const backendUrl = 'https://localhost:7273';
+    const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${token}`
+    };
+
+    try {
+        const response = await fetch(`${backendUrl}/ai/AIFeatures/recommend?customer_id=${customerId}`, {
+            method: 'POST',
+            headers: headers
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            console.error("Server Error:", response.status, errorText);
+            throw new Error("Network response was not ok");
+        }
+
+        const data = await response.json();
+
+        if (!data || !data.recommended_products) {
+            throw new Error("Invalid response structure");
+        }
+
+        const products = data.recommended_products;
+        const container = document.getElementById('recommendedProductsContainer');
+        container.innerHTML = '';
+
+        products.slice(0, 4).forEach(product => {
+            const imageUrl = product.ProductImage.startsWith('/')
+                ? backendUrl + product.ProductImage
+                : backendUrl + '/' + product.ProductImage;
+
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            card.style = `
+                border: 1px solid #e0e0e0;
+                border-radius: 12px;
+                box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+                background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+                margin: 16px;
+                transition: all 0.3s ease-in-out;
+                width: 260px;
+                display: inline-block;
+                vertical-align: top;
+                overflow: hidden;
+                position: relative;
+            `;
+
+            card.onmouseover = () => {
+                card.style.transform = 'translateY(-5px)';
+                card.style.boxShadow = '0 12px 24px rgba(0, 0, 0, 0.12)';
+            };
+            card.onmouseout = () => {
+                card.style.transform = 'translateY(0)';
+                card.style.boxShadow = '0 8px 18px rgba(0, 0, 0, 0.08)';
+            };
+
+            const cardInnerHTML = `
+                <div class="product-badge" style="
+                    position: absolute;
+                    top: 10px;
+                    left: 10px;
+                    background-color: #ffc107;
+                    color: #222;
+                    font-size: 12px;
+                    padding: 3px 8px;
+                    border-radius: 4px;
+                    font-weight: 600;
+                ">${product.CategoryName}</div>
+
+                <div class="product-image" style="
+                    height: 200px;
+                    background: #fff;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                ">
+                    <img src="${imageUrl}" alt="${product.Name}" style="
+                        max-width: 90%;
+                        max-height: 90%;
+                        object-fit: contain;
+                        transition: transform 0.3s ease;
+                    ">
+                </div>
+
+                <div class="product-details" style="padding: 15px; text-align: left;">
+                    <h4 style="margin: 0 0 8px; font-size: 18px; color: #333; font-weight: bold;">
+                        ${product.Name}
+                    </h4>
+                    <p style="font-size: 13px; color: #666; margin-bottom: 5px;">${product.Description}</p>
+                    <div class="product-price" style="color: #dc3545; font-size: 16px; font-weight: bold; margin: 10px 0;">
+                        Rs. ${product.Price}
+                    </div>
+                    <div class="action-buttons" style="
+                        display: flex;
+                        justify-content: space-between;
+                        gap: 6px;
+                        margin-top: 10px;
+                    ">
+                        <button class="add-to-cart" style="
+                            flex: 1;
+                            background-color: #28a745;
+                            color: white;
+                            padding: 6px;
+                            border: none;
+                            border-radius: 4px;
+                            font-size: 12px;
+                            cursor: pointer;
+                        ">Add</button>
+                        <button class="buy-now" style="
+                            flex: 1;
+                            background-color: #007bff;
+                            color: white;
+                            padding: 6px;
+                            border: none;
+                            border-radius: 4px;
+                            font-size: 12px;
+                            cursor: pointer;
+                        ">Buy</button>
+                    </div>
+                </div>
+            `;
+
+            card.innerHTML = cardInnerHTML;
+            container.appendChild(card);
+
+            // Functional event handlers
+            const addBtn = card.querySelector('.add-to-cart');
+            const buyBtn = card.querySelector('.buy-now');
+
+            addBtn.addEventListener('click', async () => {
+                try {
+                    const cartResponse = await fetch(`${backendUrl}/api/Carts/AddToCart`, {
+                        method: 'POST',
+                        headers: headers,
+                        body: JSON.stringify({
+                            CustomerId: parseInt(customerId),
+                            ProductId: product.ProductId,
+                            Quantity: 1
+                        })
+                    });
+
+                    if (!cartResponse.ok) {
+                        const msg = await cartResponse.text();
+                        throw new Error(msg);
+                    }
+
+                    alert("Product added to cart.");
+                } catch (err) {
+                    console.error("Add to cart failed:", err);
+                    alert("Failed to add product to cart.");
+                }
+            });
+
+            buyBtn.addEventListener('click', async () => {
+                try {
+                    const res = await fetch(`${backendUrl}/api/Carts/AddToCart`, {
+                        method: 'POST',
+                        headers: headers,
+                        body: JSON.stringify({
+                            CustomerId: parseInt(customerId),
+                            ProductId: product.ProductId,
+                            Quantity: 1
+                        })
+                    });
+
+                    if (!res.ok) {
+                        const msg = await res.text();
+                        throw new Error(msg);
+                    }
+
+                    window.location.href = 'my-cart.html';
+                } catch (err) {
+                    console.error("Buy now failed:", err);
+                    alert("Failed to proceed with purchase.");
+                }
+            });
+        });
+    } catch (error) {
+        console.error("Error fetching AI recommendations:", error);
+        alert("Could not load recommended products. Please try again.");
+    }
+});
+</script>
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+</body>
+</html>

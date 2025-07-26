@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShopAI - Home</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <link rel="stylesheet" href="assets/responsive.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header class="navbar-wrapper">
+      <nav class="navbar">
+        <!-- Logo -->
+        <a href="index.html" class="nav-brand">
+          <img src="images/logo.png" alt="" />
+          Shop<span>AI</span>
+        </a>
+
+        <!-- Navigation Menu -->
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link active">
+              <i class="fas fa-home"></i> Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="fas fa-list"></i> Categories
+              <i class="fas fa-chevron-down"></i>
+            </a>
+            <div class="dropdown-menu">
+              <a href="#" class="dropdown-link"
+                ><i class="fas fa-laptop"></i> Electronics</a
+              >
+              <a href="#" class="dropdown-link"
+                ><i class="fas fa-tshirt"></i> Fashion</a
+              >
+              <a href="#" class="dropdown-link"
+                ><i class="fas fa-home"></i> Home Essentials</a
+              >
+              <a href="#" class="dropdown-link"
+                ><i class="fas fa-search"></i> Health & Care</a
+              >
+              <a href="#" class="dropdown-link"
+                ><i class="fas fa-truck"></i> Kid Collection</a
+              >
+              <a href="#" class="dropdown-link"
+                ><i class="fas fa-bars"></i> Cosmatics</a
+              >
+              <a href="#" class="dropdown-link"
+                ><i class="fas fa-user"></i> Men Collection</a
+              >
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">
+              <i class="fas fa-info-circle"></i> About
+            </a>
+          </li>
+        </ul>
+
+        <!-- Search Box -->
+        <div class="search-box">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search products..."
+          />
+          <button class="search-btn">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+
+        <!-- Action Icons -->
+        <div class="nav-actions">
+          <a href="login.html" class="action-icon">
+            <i class="fas fa-user"></i>
+          </a>
+          <a href="login.html" class="action-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-badge">0</span>
+          </a>
+          <a href="sellerlogin.html" class="action-icon">
+            <p>Join as Seller</p>
+          </a>
+        </div>
+
+        <!-- Mobile Toggle -->
+        <div class="menu-toggle" onclick="toggleMobileMenu()">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Welcome to ShopAI</h1>
+        <p>Discover AI-powered shopping tailored just for you.</p>
+        <a href="login.html" class="btn">Shop Now</a>
+      </div>
+    </section>
+
+    <!--Service Features-->
+    <div class="service-features">
+      <div class="feature">
+        <i class="fas fa-check-circle"></i>
+        <span>Quality Product</span>
+      </div>
+      <div class="feature">
+        <i class="fas fa-truck"></i>
+        <span>Free Shipping</span>
+      </div>
+      <div class="feature">
+        <i class="fas fa-exchange-alt"></i>
+        <span>14-Day Return</span>
+      </div>
+      <div class="feature">
+        <i class="fas fa-headset"></i>
+        <span>24/7 Support</span>
+      </div>
+    </div>
+
+    <!-- Join the App Section -->
+    <section class="join-app">
+      <div class="join-app-content">
+        <h2>Join the ShopAI App</h2>
+        <p>
+          Experience the full potential of our platform by joining the ShopAI
+          app!
+        </p>
+        <a href="https://link-to-app" class="btn app-btn">Join the App</a>
+      </div>
+      <div class="join-app-image">
+        <img src="images/app.webp" alt="ShopAI Mobile App" />
+      </div>
+    </section>
+
+   <!-- Recommended Products -->
+   <section class="recommended-section">
+    <div class="section-header">
+        <h3>Recommended For You</h3> 
+        <a href="#" class="view-all">View All</a>
+        </div>
+        
+    </div>
+    <div class="products-grid">
+        <!-- Product Card 1 -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://m.media-amazon.com/images/I/71WkDp--uqL._AC_UL480_FMwebp_QL65_.jpg" alt="Product">
+            </div>
+            <div class="product-details">
+                <h4>EliteBook Hp Core 5</h4>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>(128)</span>
+                </div>
+                <div class="product-price">
+                    <span class="current-price">Rs.50,499</span>
+                    <span class="original-price">Rs.79,999</span>
+                </div>
+                <button class="add-to-cart">
+                    <i class="fas fa-shopping-cart"></i>Add to Cart
+                </button>
+                <button class="buy-now-btn">
+                 <i class="fas fa-wallet"></i>Buy Now
+              </button>
+            </div>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="images/pic4.jpeg" alt="Product">
+            </div>
+            <div class="product-details">
+                <h4>Fitness Smartwatch</h4>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <span>(89)</span>
+                </div>
+                <div class="product-price">
+                    <span class="current-price">Rs.1,799</span>
+                </div>
+                <button class="add-to-cart">
+                    <i class="fas fa-shopping-cart"></i>Add to Cart 
+                </button>
+                <button class="buy-now-btn">
+                  <i class="fas fa-wallet"></i>Buy Now
+               </button>
+            </div>
+        </div>
+
+        <!-- Product Card 3 -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="https://m.media-amazon.com/images/I/61BGE6iu4AL._AC_UL480_FMwebp_QL65_.jpg" alt="Product">
+            </div>
+            <div class="product-details">
+                <h4>iphone 11pro max</h4>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span>(256)</span>
+                </div>
+                <div class="product-price">
+                    <span class="current-price">Rs.84,999</span>
+                    <span class="original-price">Rs.90,999</span>
+                </div>
+                <button class="add-to-cart">
+                    <i class="fas fa-shopping-cart"></i>Add to Cart
+                </button>
+                <button class="buy-now-btn">
+                  <i class="fas fa-wallet"></i>Buy Now
+               </button>
+            </div>
+        </div>
+
+        <!-- Product Card 4 -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="images/pic2.jpeg" alt="Product">
+            </div>
+            <div class="product-details">
+                <h4>Wireless Airpods</h4>
+                <div class="product-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>(72)</span>
+                </div>
+                <div class="product-price">
+                    <span class="current-price">Rs.999</span>
+                </div>
+                <button class="add-to-cart">
+                    <i class="fas fa-shopping-cart"></i>Add to Cart
+                </button>
+                <button class="buy-now-btn">
+                  <i class="fas fa-wallet"></i>Buy Now
+               </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!--Featured Products-->
+    <section class="featured-products">
+      <h2>Featured Products</h2>
+      <div class="featured-products-slider">
+        <div
+          class="slide active"
+          style="background-image: url('images/fproduct1.jpg')"
+        >
+          <div class="product-content">
+            <h1>Summer Collection 2025</h1>
+            <p>Discover our new arrivals with exclusive discounts</p>
+            <a href="login.html" class="btn">Shop Now</a>
+          </div>
+        </div>
+        <div
+          class="slide"
+          style="background-image: url('images/fproduct3.jpg')"
+        >
+          <div class="product-content">
+            <h1>Winter Essentials</h1>
+            <p>Stay warm with our premium winter collection</p>
+            <a href="login.html" class="btn">Explore</a>
+          </div>
+        </div>
+        <div
+          class="slide"
+          style="background-image: url('images/fproduct2.jpg')"
+        >
+          <div class="product-content">
+            <h1>Electronics Sale</h1>
+            <p>Up to 40% off on all gadgets</p>
+            <a href="login.html" class="btn">View Deals</a>
+          </div>
+        </div>
+        <div
+          class="slide"
+          style="background-image: url('images/fproduct4.jpg')"
+        >
+          <div class="product-content">
+            <h1>New Arrivals</h1>
+            <p>Fresh styles added daily</p>
+            <a href="login.html" class="btn">Discover</a>
+          </div>
+        </div>
+      </div>
+      <div class="slider-controls">
+        <button class="prev-slide"><i class="fas fa-chevron-left"></i></button>
+        <div class="slide-dots"></div>
+        <button class="next-slide"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </section>
+
+    <!-- Expense Manager Section -->
+    <section class="expense-manager">
+      <div class="expense-container">
+        <div class="expense-content">
+          <h2>AI-Powered Expense Manager</h2>
+          <p class="tagline">Smart spending starts here!</p>
+          <div class="features">
+            <div class="feature-item">
+              <i class="fas fa-chart-line"></i>
+              <span>Real-time expense tracking</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-robot"></i>
+              <span>AI-powered budget suggestions</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-bell"></i>
+              <span>Smart spending alerts</span>
+            </div>
+          </div>
+          <p class="motivation">
+            "Take control of your finances today - your future self will thank
+            you!"
+          </p>
+          <a href="L.html" class="btn">
+            <i class="fas fa-wallet"></i> Manage Your Expenses
+          </a>
+        </div>
+        <div class="expense-image">
+          <img
+            src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+            alt="Finance Dashboard"
+          />
+          <div class="image-highlight"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section class="customer-reviews">
+      <h2>What Our Customers Say</h2>
+      <div class="reviews">
+        <div class="review">
+          <div class="customer-image">
+            <img src="images/person2.jpeg" alt="Sarah" />
+          </div>
+          <div class="review-content">
+            <div class="rating">★★★★★</div>
+            <p class="review-text">
+              "Amazing AI shopping experience! Highly recommended."
+            </p>
+            <div class="customer-info">
+              <span class="customer-name">- Sarah</span>
+              <span class="customer-location">New York</span>
+            </div>
+          </div>
+        </div>
+        <div class="review">
+          <div class="customer-image">
+            <img src="images/person1.jpeg" alt="Affan" />
+          </div>
+          <div class="review-content">
+            <div class="rating">★★★★☆</div>
+            <p class="review-text">
+              "ShopAI understands my needs and recommends the best products!"
+            </p>
+            <div class="customer-info">
+              <span class="customer-name">- Affan</span>
+              <span class="customer-location">Pakistan</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+      <div class="footer-container">
+        <!-- Payment Methods -->
+        <div class="footer-section payment-methods">
+          <h3 class="footer-heading">Payment Methods</h3>
+          <ul class="footer-list">
+            <li>JazzCash</li>
+            <li>EasyPaisa</li>
+            <li>Cash on Delivery</li>
+          </ul>
+        </div>
+
+        <!-- Social Media -->
+        <div class="footer-section social-media">
+          <h3 class="footer-heading">Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://instagram.com" target="_blank" class="social-link">
+              <img src="images/instagram.jpeg" alt="Instagram" width="32" />
+            </a>
+            <a href="https://facebook.com" target="_blank" class="social-link">
+              <img src="images/facebook.png" alt="Facebook" width="32" />
+            </a>
+            <a href="https://twitter.com" target="_blank" class="social-link">
+              <img src="images/twiter.png" alt="Twitter" width="32" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-section contact-info">
+          <h3 class="footer-heading">Contact Us</h3>
+          <ul class="footer-list">
+            <li><i class="fas fa-envelope"></i> funfacts5454@gmail.com</li>
+            <li><i class="fas fa-phone"></i> +923060406309</li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i> 123 ShopAI Street, Tech City
+            </li>
+          </ul>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="footer-section newsletter">
+          <h3 class="footer-heading">Newsletter</h3>
+          <p>Subscribe for updates and offers</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Your email address" required />
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; 2025 ShopAI. All rights reserved.</p>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>

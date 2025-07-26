@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShopAI - Grocery Expense Manager</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="assets/expensemanager.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+ <aside class="sidebar">
+     <div class="logo-container">
+         <img src="images/logo.png" alt="" />
+         ShopAI
+     </div>
+     <nav class="sidebar-nav">
+         <ul>
+             <li class="active">
+                 <a href="customerpage.html">
+                     <i class="fas fa-home"></i>
+                     <span>Dashboard</span>
+                 </a>
+             </li>
+                 <a href="settings.html">
+                     <i class="fas fa-cog"></i>
+                     <span>Settings</span>
+                 </a>
+             </li>
+         </ul>
+     </nav>
+     <div class="sidebar-footer">
+         <a href="logout.html" class="logout-btn">
+             <i class="fas fa-sign-out-alt"></i>
+             <span>Logout</span>
+         </a>
+     </div>
+ </aside>
+ 
+         <!-- Main Content Area -->
+         <main class="main-content">
+             <!-- Top Navigation Bar -->
+             <header class="top-nav">
+                 <div class="search-bar">
+                     <i class="fas fa-search"></i>
+                     <input type="text" placeholder="Search products...">
+                 </div>
+                 <div class="user-actions">
+                     <div class="notification">
+                         <a href="my-cart.html">
+                             <i class="fas fa-bell"></i>
+                         </a> 
+                         <span class="badge">3</span>
+                        </div>
+                      <div class="user-profile" onclick="window.location.href='account.html'" style="cursor: pointer;">
+                         <img src="images/person.jpg" alt="User">
+                         <span>Affan Ahmed</span>
+                     </div>
+                 </div>
+             </header>
+             <div class="container">
+              <h1>Grocery Expense Manager</h1>
+              
+              <div class="budget-section">
+                  <label for="budget">Enter Your Budget (Rs.
+    ):</label>
+                  <input type="number" id="budget" min="2000" placeholder="Minimum Rs.
+    2000">
+                  <button id="setBudget">Set Budget</button>
+                  <p id="budgetError" class="error"></p>
+              </div>
+              
+              <div id="recommendations" class="hidden">
+                  <h2>Recommended Items</h2>
+                  <p>Remove items you don't need:</p>
+                  <div id="itemsList" class="items-container"></div>
+                  
+                  <div id="summaryCard" class="summary-card hidden">
+                      <h3>Summary</h3>
+                      <p>Original Budget: Rs.
+    <span id="originalBudget">0</span></p>
+                      <p>Total After Recommendations: Rs.
+    <span id="recommendedTotal">0</span></p>
+                      <p>After Removing Items: Rs.
+    <span id="finalTotal">0</span></p>
+                      <p>Remaining Budget: Rs.
+    <span id="remainingBudget">0</span></span></p>
+                  </div>
+                  
+                  <button id="checkoutBtn" class="hidden">Proceed to Checkout</button>
+              </div>
+          </div>
+    
+
+  <script src="js/expensemanager.js">
+   
+  </script>
+</body>
+</html>

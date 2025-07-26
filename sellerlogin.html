@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Login | ShopAI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/sellerauth.css">
+</head>
+<body class="seller-portal">
+        <div class="auth-form-container" id="login-form">
+            <div class="auth-header">
+                <h2>Seller Portal</h2>
+                <p>Login to manage your store</p>
+            </div>
+        
+            
+            <form class="auth-form" id="seller-login">
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" 
+                           id="seller-email" 
+                           name="email"
+                           autocomplete="email"
+                           placeholder="Business Email" 
+                           required>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" 
+                           id="seller-password" 
+                           name="password"
+                           autocomplete="current-password"
+                           placeholder="Password" 
+                           required>
+                    <i class="fas fa-eye toggle-password"></i>
+                </div>
+                
+                <div class="auth-options">
+                    <label>
+                        <input type="checkbox" 
+                               id="remember-me" 
+                               name="remember_me"> Remember me
+                    </label>
+                    <a href="sellerfp.html">Forgot password?</a>
+                </div>
+                
+                <button type="submit" class="auth-btn">Login</button>
+                
+                <div class="auth-footer">
+                    <p>Don't have a seller account? <a href="sellerSignup.html" class="switch-form">Register Now</a></p>
+                </div>
+            </form>
+            
+            <div class="social-login">
+                <p>Or login with</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon google">
+                        <i class="fab fa-google"></i>
+                    </a>
+                    <a href="#" class="social-icon facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-icon linkedin">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!--Hero section-->
+        <div class="auth-hero">
+            <div class="hero-content">
+                <h1>ShopAI Seller</h1>
+                <p>Grow your business with our AI-powered marketplace</p>
+                <div class="seller-features">
+                    <p><i class="fas fa-chart-line"></i> Real-time analytics</p>
+                    <p><i class="fas fa-boxes"></i> Inventory management</p>
+                    <p><i class="fas fa-robot"></i> AI-powered recommendations</p>
+                </div>
+            </div>
+        </div>
+    <script src="js/sellerauth.js"></script>
+</body>
+</html>

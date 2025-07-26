@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product details | ShopAI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/product.css">
+</head>
+<body>
+    <div class="dashboard-container">
+       <!-- Sidebar Navigation -->
+<aside class="sidebar">
+    <div class="logo-container">
+        <img src="images/logo.png" alt="" />
+        ShopAI
+    </div>
+    <nav class="sidebar-nav">
+        <ul>
+            <li class="active">
+                <a href="customerpage.html">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <li class="dropdown">
+                <a href="#">
+                    <i class="fas fa-th-large"></i>
+                    <span>Categories</span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Electronic</a></li>
+                    <li><a href="#">Fashion</a></li>
+                    <li><a href="#">Home Essentials</a></li>
+                    <li><a href="#">Health & Care</a></li>
+                    <li><a href="#">Kid Collection</a></li>
+                    <li><a href="#">Cosmetics</a></li>
+                    <li><a href="#">Men Collections</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>My Cart</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Expense Manager</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                   <i class="fas fa-comments"></i>
+                    <span>Chat With Us</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="sidebar-footer">
+        <a href="logout.html" class="logout-btn">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span>
+        </a>
+    </div>
+</aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Navigation Bar -->
+            <header class="top-nav">
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search products...">
+                </div>
+                <div class="user-actions">
+                    <div class="notification">
+                        <a href="my-cart.html">
+                            <i class="fas fa-bell"></i>
+                        </a>
+                        
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <img src="images/person.jpg" alt="User">
+                        <span>Affan Ahmed</span>
+                    </div>
+                </div>
+            </header>
+        <div class="container">
+            <!-- Product Gallery -->
+            <div class="product-gallery">
+                <div class="thumbnail-container">
+                    <div class="thumbnail active">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Product Thumbnail">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Product Thumbnail">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Product Thumbnail">
+                    </div>
+                    <div class="thumbnail">
+                        <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Product Thumbnail">
+                    </div>
+                </div>
+                <div class="main-image">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Premium Smart Watch" id="mainProductImage">
+                </div>
+            </div>
+            
+            <!-- Product Container -->
+            <div class="product-container">
+                <div class="product-info">
+                    <h1 class="product-title">Premium Smart Watch Series 7</h1>
+                    <p class="product-brand">By TechBrand</p>
+                    
+                    <div class="rating-container">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="rating-count">142 Reviews</span>
+                    </div>
+                    
+                    <div class="price-container">
+                        <span class="current-price">$299.99</span>
+                        <span class="original-price">$399.99</span>
+                        <span class="discount">25% OFF</span>
+                    </div>
+                    
+                    <div class="availability">
+                        <i class="fas fa-check-circle"></i>
+                        <span>In Stock (Only 5 left)</span>
+                    </div>
+                    
+                    <p class="product-description">
+                        The Premium Smart Watch Series 7 features an always-on Retina display that's 20% larger than Series 6. Measure your blood oxygen with a revolutionary sensor and app. Take an ECG anytime, anywhere. Track your sleep. And enjoy up to 18 hours of battery life.
+                    </p>
+                    
+                    <!-- Color Options -->
+                    <div class="option-section">
+                        <h3 class="option-title">Color</h3>
+                        <div class="color-options">
+                            <div class="color-option active" style="background-color: #1e293b;" data-color="Midnight"></div>
+                            <div class="color-option" style="background-color: #f8fafc;" data-color="Silver"></div>
+                            <div class="color-option" style="background-color: #dc2626;" data-color="Red"></div>
+                            <div class="color-option" style="background-color: #2563eb;" data-color="Blue"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Size Options -->
+                    <div class="option-section">
+                        <h3 class="option-title">Size</h3>
+                        <div class="size-options">
+                            <div class="size-option">41mm</div>
+                            <div class="size-option active">45mm</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Quantity Selector -->
+                    <div class="quantity-selector">
+                        <span>Quantity:</span>
+                        <div class="qty-control">
+                            <button class="qty-btn minus">-</button>
+                            <input type="text" class="qty-value" value="1" readonly>
+                            <button class="qty-btn plus">+</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" onclick="addToCart()">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                        <button class="btn btn-secondary">
+                            <i class="fas fa-bolt"></i> Buy Now
+                        </button>
+                    </div>
+                    
+                    <!-- Product Tabs -->
+                    <div class="product-tabs">
+                        <div class="tabs-header">
+                            <button class="tab-btn active" data-tab="description">Description</button>
+                            <button class="tab-btn" data-tab="specifications">Specifications</button>
+                            <button class="tab-btn" data-tab="reviews">Reviews (142)</button>
+                        </div>
+                        
+                        <div class="tab-content">
+                            <!-- Description Tab -->
+                            <div class="tab-pane active" id="description">
+                                <h3>Product Description</h3>
+                                <p>Experience the future on your wrist with the Premium Smart Watch Series 7. Designed for performance and style, this watch keeps you connected, active, and healthy.</p>
+                                
+                                <h4>Key Features:</h4>
+                                <ul>
+                                    <li>Always-On Retina display (20% larger than previous models)</li>
+                                    <li>Blood oxygen sensor and app</li>
+                                    <li>ECG app for heart health monitoring</li>
+                                    <li>Advanced sleep tracking</li>
+                                    <li>Up to 18 hours of battery life</li>
+                                    <li>Water resistant to 50 meters</li>
+                                    <li>Track your daily activity and workouts</li>
+                                    <li>Receive calls and messages on your wrist</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Specifications Tab -->
+                            <div class="tab-pane" id="specifications">
+                                <h3>Technical Specifications</h3>
+                                <div class="specifications">
+                                    <table>
+                                        <tr>
+                                            <th>Display</th>
+                                            <td>Always-On Retina LTPO OLED, 1000 nits brightness</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Size</th>
+                                            <td>41mm or 45mm case size</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Chip</th>
+                                            <td>S7 SiP with 64-bit dual-core processor</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Connectivity</th>
+                                            <td>Bluetooth 5.0, Wi-Fi, NFC, GPS</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Sensors</th>
+                                            <td>Blood oxygen, ECG, Heart rate, Accelerometer, Gyroscope</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Water Resistance</th>
+                                            <td>50 meters under ISO standard 22810:2010</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Battery Life</th>
+                                            <td>Up to 18 hours (All-day battery life)</td>
+                                        </tr>
+                                        <tr>
+                                            <th>Compatibility</th>
+                                            <td>iPhone 6s or later with iOS 15 or later</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            
+                            <!-- Reviews Tab -->
+                            <div class="tab-pane" id="reviews">
+                                <h3>Customer Reviews</h3>
+                                
+                                <!-- Review Form -->
+                                <div class="review-form-container">
+                                    <form class="review-form">
+                                        <h3>Write a Review</h3>
+                                        
+                                        <div class="form-group">
+                                            <label for="review-name">Your Name</label>
+                                            <input type="text" id="review-name" placeholder="Enter your name">
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="review-email">Email Address</label>
+                                            <input type="email" id="review-email" placeholder="Enter your email">
+                                        </div>
+                                        
+                                        <div class="rating-selector">
+                                            <label>Your Rating</label>
+                                            <div class="stars-container">
+                                                <i class="fas fa-star rating-star" data-rating="1"></i>
+                                                <i class="fas fa-star rating-star" data-rating="2"></i>
+                                                <i class="fas fa-star rating-star" data-rating="3"></i>
+                                                <i class="fas fa-star rating-star" data-rating="4"></i>
+                                                <i class="fas fa-star rating-star" data-rating="5"></i>
+                                            </div>
+                                            <input type="hidden" id="user-rating" value="0">
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="review-title">Review Title</label>
+                                            <input type="text" id="review-title" placeholder="Summarize your experience">
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="review-content">Your Review</label>
+                                            <textarea id="review-content" placeholder="Tell us what you think about this product"></textarea>
+                                        </div>
+                                        
+                                        <div class="form-actions">
+                                            <button type="button" class="btn btn-secondary">Cancel</button>
+                                            <button type="submit" class="btn btn-primary">Submit Review</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                
+                                <!-- Reviews List -->
+                                <div class="reviews-list">
+                                    <div class="review">
+                                        <div class="review-header">
+                                            <div class="reviewer">
+                                                <div class="reviewer-avatar">JD</div>
+                                                <div>
+                                                    <div class="reviewer-name">John Doe</div>
+                                                    <div class="stars">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="review-date">October 15, 2023</div>
+                                        </div>
+                                        <h4>Best smartwatch I've ever owned</h4>
+                                        <div class="review-content">
+                                            <p>I've been using this watch for a month now and it's absolutely fantastic. The battery life is impressive, the display is crisp and bright, and the health features are incredibly accurate. Highly recommended!</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="review">
+                                        <div class="review-header">
+                                            <div class="reviewer">
+                                                <div class="reviewer-avatar">AS</div>
+                                                <div>
+                                                    <div class="reviewer-name">Alice Smith</div>
+                                                    <div class="stars">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="review-date">September 28, 2023</div>
+                                        </div>
+                                        <h4>Great but battery could be better</h4>
+                                        <div class="review-content">
+                                            <p>Love the design and features of this watch. The only downside is that with always-on display enabled, the battery barely lasts a full day. Otherwise, it's a great product.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Sidebar -->
+                <div class="product-sidebar">
+                    <div class="shipping-info">
+                        <h3>Shipping & Returns</h3>
+                        <div class="info-item">
+                            <i class="fas fa-truck"></i>
+                            <span>Free shipping on orders over $50</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-undo"></i>
+                            <span>30-day free returns</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>2-year warranty included</span>
+                        </div>
+                    </div>
+                    
+                    <div class="support-info">
+                        <h3>Need Help?</h3>
+                        <p>Our customer service team is available 24/7 to answer your questions.</p>
+                        <button class="btn btn-secondary">
+                            <i class="fas fa-headset"></i> Contact Support
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Related Products -->
+            <div class="related-products">
+                <div class="section-header">
+                    <h2 class="section-title">You May Also Like</h2>
+                    <a href="#" class="view-all">View All</a>
+                </div>
+                
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="product-badge">New</span>
+                            <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Wireless Earbuds">
+                        </div>
+                        <div class="product-details">
+                            <h4 class="product-name">Premium Wireless Earbuds</h4>
+                            <div class="product-price">$149.99</div>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Smartphone">
+                        </div>
+                        <div class="product-details">
+                            <h4 class="product-name">Ultra HD Smartphone</h4>
+                            <div class="product-price">$799.99</div>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <span class="product-badge">Sale</span>
+                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Headphones">
+                        </div>
+                        <div class="product-details">
+                            <h4 class="product-name">Noise Cancelling Headphones</h4>
+                            <div class="product-price">$199.99 <span class="original-price">$249.99</span></div>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Camera">
+                        </div>
+                        <div class="product-details">
+                            <h4 class="product-name">4K Digital Camera</h4>
+                            <div class="product-price">$499.99</div>
+                            <button class="add-to-cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="footer-container">
+          <!-- Payment Methods -->
+          <div class="footer-section payment-methods">
+            <h3 class="footer-heading">Payment Methods</h3>
+            <ul class="footer-list">
+              <li>JazzCash</li>
+              <li>EasyPaisa</li>
+              <li>Cash on Delivery</li>
+            </ul>
+          </div>
+  
+          <!-- Social Media -->
+          <div class="footer-section social-media">
+            <h3 class="footer-heading">Follow Us</h3>
+            <div class="social-icons">
+              <a href="https://instagram.com" target="_blank" class="social-link">
+                <img src="images/instagram.jpeg" alt="Instagram" width="32" />
+              </a>
+              <a href="https://facebook.com" target="_blank" class="social-link">
+                <img src="images/facebook.png" alt="Facebook" width="32" />
+              </a>
+              <a href="https://twitter.com" target="_blank" class="social-link">
+                <img src="images/twiter.png" alt="Twitter" width="32" />
+              </a>
+            </div>
+          </div>
+  
+          <!-- Contact Info -->
+          <div class="footer-section contact-info">
+            <h3 class="footer-heading">Contact Us</h3>
+            <ul class="footer-list">
+              <li><i class="fas fa-envelope"></i> support@shopai.com</li>
+              <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+              <li>
+                <i class="fas fa-map-marker-alt"></i> 123 ShopAI Street, Tech City
+              </li>
+            </ul>
+          </div>
+  
+          <!-- Newsletter -->
+          <div class="footer-section newsletter">
+            <h3 class="footer-heading">Newsletter</h3>
+            <p>Subscribe for updates and offers</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email address" required />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+  
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <p>&copy; 2025 ShopAI. All rights reserved.</p>
+        </div>
+      </footer>
+
+    <script src="js/product.js"></script>
+</body>
+</html>

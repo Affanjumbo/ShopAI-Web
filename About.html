@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Company Name</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/about.css">
+</head>
+<body>
+    <header class="navbar-wrapper">
+        <nav class="navbar">
+            <!-- Logo -->
+            <a href="index.html" class="nav-brand">
+                <img src="images/logo.png" alt="">
+                Shop<span>AI</span>
+            </a>
+    
+            <!-- Navigation Menu -->
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link active">
+                        <i class="fas fa-home"></i> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-list"></i> Categories <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-link"><i class="fas fa-laptop"></i> Electronics</a>
+                        <a href="#" class="dropdown-link"><i class="fas fa-tshirt"></i> Fashion</a>
+                        <a href="#" class="dropdown-link"><i class="fas fa-home"></i> Home Essentials</a>
+                        <a href="#" class="dropdown-link"><i class="fas fa-search"></i> Health & Care</a>
+                        <a href="#" class="dropdown-link"><i class="fas fa-truck"></i> Kid Collection</a>
+                        <a href="#" class="dropdown-link"><i class="fas fa-bars"></i> Cosmatics</a>
+                        <a href="#" class="dropdown-link"><i class="fas fa-user"></i> Men Collection</a>
+
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">
+                        <i class="fas fa-info-circle"></i> About
+                    </a>
+                </li>
+            </ul>
+    
+            <!-- Search Box -->
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Search products...">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+    
+            <!-- Action Icons -->
+            <div class="nav-actions">
+                <a href="login.html" class="action-icon">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a href="cart.html" class="action-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge">0</span>
+                </a>
+                <a href="seller.html" class="action-icon">
+                    <p>Join as Seller</p>
+                </a>
+            </div>
+    
+            <!-- Mobile Toggle -->
+            <div class="menu-toggle" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+    <!-- Hero Section -->
+    <section class="about-header">
+        <div class="container"></div>
+            <h1>Our Story</h1>
+            <p>Founded in 2025, we've been on a mission to deliver exceptional value through innovation and dedication to our customers.</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- Mission Section -->
+        <section class="mission-section">
+            <div class="mission-content">
+                <h2 class="section-title">Our Mission</h2>
+                <p>We believe in creating products that solve real problems with elegant solutions. Our team of passionate professionals works tirelessly to deliver the best experience for our customers.</p>
+                <p style="margin-top: 15px;">From our humble beginnings as a startup to becoming an industry leader, we've maintained our commitment to quality and customer satisfaction.</p>
+            </div>
+            <div class="mission-image">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Our team working together">
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team-section">
+            <div class="container">
+                <h2 class="section-title" style="text-align: center;">Meet Our Team</h2>
+                <p style="text-align: center; max-width: 700px; margin: 0 auto 40px; color: var(--gray);">The talented individuals behind our success</p>
+                
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="images/person.jpg" alt="Team member">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Affan Ahmed</h3>
+                            <p class="member-role">CEO & Founder</p>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="images/person2.jpg" alt="Team member">
+                        </div>
+                        <div class="member-info">
+                            <h3 class="member-name">Aima Khan</h3>
+                            <p class="member-role">Head of Design</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section class="values-section">
+            <h2 class="section-title" style="text-align: center;">Our Core Values</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 40px; color: var(--gray);">The principles that guide everything we do</p>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="value-title">Innovation</h3>
+                    <p>We constantly push boundaries to create groundbreaking solutions that anticipate customer needs.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="value-title">Integrity</h3>
+                    <p>We conduct business with honesty and transparency, building trust with every interaction.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="value-title">Collaboration</h3>
+                    <p>We believe the best results come from diverse teams working together toward common goals.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2>Ready to join our journey?</h2>
+            <p>We're always looking for talented individuals to join our growing team.</p>
+            <a href="#" class="cta-button">View Open Positions</a>
+        </section>
+    </main>
+</body>
+</html>

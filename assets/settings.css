@@ -1,0 +1,585 @@
+ /* Base Styles (matches your existing theme) */
+ :root {
+    --primary: #009688;
+    --primary-dark: #00796b;
+    --secondary: #f44336;
+    --text: #333;
+    --text-light: #666;
+    --border: #e0e0e0;
+    --bg-light: #f5f7fa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header Styles (matches your account page) */
+.account-header {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+.account-header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.user-profile-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.user-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.user-info h1 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.account-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background-color: white;
+    color: var(--primary);
+}
+
+.btn-outline {
+    border: 1px solid white;
+    color: white;
+    background: transparent;
+}
+
+.btn i {
+    margin-right: 8px;
+}
+
+/* Navigation (matches your theme) */
+.account-nav {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.account-nav ul {
+    display: flex;
+    list-style: none;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 0 15px;
+}
+
+.account-nav li {
+    flex-shrink: 0;
+}
+
+.account-nav a {
+    display: block;
+    padding: 1rem;
+    color: var(--text-light);
+    font-weight: 500;
+    position: relative;
+}
+
+.account-nav a.active {
+    color: var(--primary);
+}
+
+.account-nav a.active:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--primary);
+}
+
+
+/* Settings Page Specific Styles */
+.settings-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+}
+
+.settings-sidebar {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    height: fit-content;
+}
+
+.settings-menu {
+    list-style: none;
+}
+
+.settings-menu li {
+    margin-bottom: 0.5rem;
+}
+
+.settings-menu a {
+    display: block;
+    padding: 0.8rem 1rem;
+    color: var(--text);
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.settings-menu a:hover, 
+.settings-menu a.active {
+    background-color: var(--bg-light);
+    color: var(--primary);
+}
+
+.settings-menu a i {
+    width: 24px;
+    text-align: center;
+    margin-right: 0.5rem;
+}
+
+.settings-content {
+    background-color: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.settings-section {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.settings-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+/* Profile Settings */
+.profile-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.profile-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.profile-form input,
+.profile-form select,
+.profile-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.profile-form textarea {
+    min-height: 100px;
+}
+
+.avatar-upload {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.avatar-preview {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--border);
+}
+
+/* Security Settings */
+.security-alert {
+    background-color: #FFF3E0;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.security-alert i {
+    color: #FF9800;
+    font-size: 1.5rem;
+}
+
+.device-list {
+    list-style: none;
+}
+
+.device-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+    align-items: center;
+}
+
+.device-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.device-icon {
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+/* Notification Settings */
+.notification-category {
+    margin-bottom: 2rem;
+}
+
+.notification-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.notification-option {
+    background-color: var(--bg-light);
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+/* Payment Methods */
+.payment-methods {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.payment-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+}
+
+.payment-card-default {
+    border-color: var(--primary);
+}
+
+.payment-card-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.payment-card-icon {
+    font-size: 1.8rem;
+    color: var(--primary);
+}
+
+/* Privacy Settings */
+.privacy-options {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.privacy-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Toggle Switch */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--primary);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Footer (matches your theme) */
+.site-footer {
+    margin-top: 3rem;
+    background-color: #00796b;
+    color: #ecf0f1;
+    padding: 50px 0 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .settings-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .settings-sidebar {
+        order: 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .user-profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .account-actions {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .notification-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .user-avatar {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .avatar-upload {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .payment-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+}
+ /* Footer Styles */
+ .site-footer {
+    margin-top: 10px;
+    background-color:#00796b;
+    color: #ecf0f1;
+    padding: 50px 0 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+  }
+  
+  .footer-section {
+    margin-bottom: 30px;
+  }
+  
+  .footer-heading {
+    color: rgb(199, 106, 106);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+  }
+  
+  .footer-heading::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color:rgb(199, 106, 106) ;
+  }
+  
+  .footer-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-list li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .footer-list img {
+    filter: brightness(0) invert(1);
+  }
+  
+  /* Social Media Icons */
+  .social-icons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .social-link {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-link:hover {
+    transform: translateY(-3px);
+  }
+  
+  .social-link img {
+    width: 32px;
+    height: 32px;
+    transition: filter 0.3s ease;
+  }
+  
+  /* Newsletter Form */
+  .newsletter-form {
+    display: flex;
+    margin-top: 15px;
+  }
+  
+  .newsletter-form input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+  }
+  
+  .newsletter-form button {
+    background-color: rgb(199, 106, 106);
+    color: white;
+    border: none;
+    padding: 0 15px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .newsletter-form button:hover {
+    background-color: #e65100;
+  }
+  
+  /* Footer Bottom */
+  .footer-bottom {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin-top: 30px;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #bdc3c7;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-container {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer-container {
+      grid-template-columns: 1fr;
+    }
+    
+    .footer-heading {
+      font-size: 1.1rem;
+    }
+    
+    .social-icons {
+      justify-content: center;
+    }
+  }

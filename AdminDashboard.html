@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Your Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar Navigation -->
+        <aside class="admin-sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-shield-alt"></i> Admin Panel</h2>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="#dashboard">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#users">
+                            <i class="fas fa-users"></i>
+                            <span>Users</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#products">
+                            <i class="fas fa-box-open"></i>
+                            <span>Products</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#orders">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>Orders</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#sellers">
+                            <i class="fas fa-store"></i>
+                            <span>Sellers</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#reports">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Reports</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#settings">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="admin-profile">
+                    <img src="https://via.placeholder.com/40" alt="Admin">
+                    <div class="profile-info">
+                        <span class="admin-name">Admin User</span>
+                        <span class="admin-role">Super Admin</span>
+                    </div>
+                </div>
+                <a href="#" class="logout-btn" id="adminLogout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+        
+
+        <!-- Main Content Area -->
+        <main class="admin-main">
+            <!-- Top Header -->
+            <header class="admin-header">
+                <div class="header-left">
+                    <button class="sidebar-toggle" id="sidebarToggle">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="search-bar">
+                        <input type="text" placeholder="Search...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <div class="notifications">
+                        <button class="notification-btn" id="notificationBtn">
+                            <i class="fas fa-bell"></i>
+                            <span class="badge">5</span>
+                        </button>
+                    </div>
+                    <div class="admin-menu">
+                        <button class="admin-menu-btn">
+                            <img src="https://via.placeholder.com/40" alt="Admin">
+                            <span>Admin</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="admin-content">
+                <div class="content-header">
+                    <h1>Dashboard Overview</h1>
+                    <div class="breadcrumb">
+                        <span>Home</span>
+                        <span>/</span>
+                        <span>Dashboard</span>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-cards">
+                    <div class="stats-card">
+                        <div class="card-icon blue">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>1,254</h3>
+                            <p>Total Users</p>
+                        </div>
+                        <div class="card-growth positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>12%</span>
+                        </div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="card-icon green">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>568</h3>
+                            <p>Today's Orders</p>
+                        </div>
+                        <div class="card-growth positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>8%</span>
+                        </div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="card-icon orange">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>89</h3>
+                            <p>Active Sellers</p>
+                        </div>
+                        <div class="card-growth negative">
+                            <i class="fas fa-arrow-down"></i>
+                            <span>3%</span>
+                        </div>
+                    </div>
+                    <div class="stats-card">
+                        <div class="card-icon purple">
+                            <i class="fas fa-rupee-sign"></i>
+                        </div>
+                        <div class="card-info">
+                            <h3>₹2,45,678</h3>
+                            <p>Today's Revenue</p>
+                        </div>
+                        <div class="card-growth positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>15%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Row -->
+                <div class="charts-row">
+                    <div class="chart-card">
+                        <div class="card-header">
+                            <h3>Sales Analytics</h3>
+                            <select class="chart-period">
+                                <option>Last 7 Days</option>
+                                <option>Last Month</option>
+                                <option selected>Last Year</option>
+                            </select>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="salesChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <div class="card-header">
+                            <h3>User Growth</h3>
+                            <select class="chart-period">
+                                <option>Last 7 Days</option>
+                                <option selected>Last Month</option>
+                                <option>Last Year</option>
+                            </select>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="usersChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Orders -->
+                <div class="recent-orders">
+                    <div class="card-header">
+                        <h3>Recent Orders</h3>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#ORD-78945</td>
+                                    <td>Rahul Sharma</td>
+                                    <td>Today, 10:45 AM</td>
+                                    <td>₹1,899</td>
+                                    <td><span class="status shipped">Shipped</span></td>
+                                    <td><button class="action-btn">View</button></td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-78944</td>
+                                    <td>Priya Patel</td>
+                                    <td>Today, 09:30 AM</td>
+                                    <td>₹2,450</td>
+                                    <td><span class="status pending">Pending</span></td>
+                                    <td><button class="action-btn">View</button></td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-78943</td>
+                                    <td>Amit Singh</td>
+                                    <td>Today, 08:15 AM</td>
+                                    <td>₹3,299</td>
+                                    <td><span class="status delivered">Delivered</span></td>
+                                    <td><button class="action-btn">View</button></td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-78942</td>
+                                    <td>Neha Gupta</td>
+                                    <td>Yesterday, 07:20 PM</td>
+                                    <td>₹1,250</td>
+                                    <td><span class="status cancelled">Cancelled</span></td>
+                                    <td><button class="action-btn">View</button></td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-78941</td>
+                                    <td>Vikram Joshi</td>
+                                    <td>Yesterday, 05:45 PM</td>
+                                    <td>₹4,599</td>
+                                    <td><span class="status processing">Processing</span></td>
+                                    <td><button class="action-btn">View</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Logout Confirmation Modal -->
+    <div class="modal" id="logoutModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Confirm Logout</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to logout?</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelLogout">Cancel</button>
+                <button class="btn btn-danger" id="confirmLogout">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

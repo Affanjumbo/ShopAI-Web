@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/customerpage.css">
+    <link rel="stylesheet" href="assets/dashbaord.css">
+<head>
+    <!-- Same head content as your customer dashboard -->
+    <title>Category | ShopAI</title>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Same sidebar as customer dashboard -->
+        
+        <main class="main-content">
+            <!-- Same top navigation as customer dashboard -->
+            
+            <div class="content-area">
+                <div class="products-header">
+                    <h2 id="category-title">Category</h2>
+                </div>
+
+                <div id="products-container">
+                    <!-- Products will be loaded here dynamically -->
+                    <div class="loading">
+                        <i class="fas fa-spinner"></i>
+                        <span>Loading products...</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get category from URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const categoryName = urlParams.get('cat');
+            const categoryId = urlParams.get('id');
+            
+            // Set category title
+            document.getElementById('category-title').textContent = categoryName;
+            
+            // Fetch products for this category
+            fetch(`https://localhost:7273/api/Products/GetAllProductsByCategory/${categoryId}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const productsContainer = document.getElementById('products-container');
+                    
+                    // Clear loading state
+                    productsContainer.innerHTML = '';
+                    
+                    // Filter out products with stock quantity 0
+                    const availableProducts = data.Data.filter(product => product.StockQuantity > 0);
+                    
+                    if (availableProducts.length === 0) {
+                        productsContainer.innerHTML = `
+                            <div class="no-products">
+                                <i class="fas fa-box-open" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                                <p>No products available in this category.</p>
+                            </div>
+                        `;
+                        return;
+                    }
+                    
+                    // Create products grid (same as in all products page)
+                    const productsGrid = document.createElement('div');
+                    productsGrid.className = 'products-grid';
+                    
+                    // Add each product to the grid
+                    availableProducts.forEach(product => {
+                        const originalPrice = product.DiscountPercentage > 0 
+                            ? (product.Price / (1 - product.DiscountPercentage / 100)).toFixed(2)
+                            : null;
+                        
+                        const productCard = document.createElement('div');
+                        productCard.className = 'product-card';
+                        productCard.innerHTML = `
+                            <div class="product-image">
+                                <img src="${product.ProductImage}" alt="${product.Name}">
+                            </div>
+                            <div class="product-details">
+                                <h4>${product.Name}</h4>
+                                <div class="product-price">
+                                    <span class="current-price">Rs.${product.Price.toFixed(2)}</span>
+                                    ${originalPrice ? `<span class="original-price">Rs.${originalPrice}</span>` : ''}
+                                </div>
+                                <button class="add-to-cart" data-product-id="${product.Id}">
+                                    <i class="fas fa-shopping-cart"></i>Add to Cart
+                                </button>
+                                <button class="buy-now-btn" data-product-id="${product.Id}">
+                                    <i class="fas fa-wallet"></i>Buy Now
+                                </button>
+                            </div>
+                        `;
+                        
+                        productsGrid.appendChild(productCard);
+                    });
+                    
+                    productsContainer.appendChild(productsGrid);
+                    
+                    // Add event listeners to buttons (same as in all products page)
+                    document.querySelectorAll('.add-to-cart').forEach(button => {
+                        button.addEventListener('click', function() {
+                            const productId = this.getAttribute('data-product-id');
+                            addToCart(productId);
+                        });
+                    });
+                    
+                    document.querySelectorAll('.buy-now-btn').forEach(button => {
+                        button.addEventListener('click', function() {
+                            const productId = this.getAttribute('data-product-id');
+                            buyNow(productId);
+                        });
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching products:', error);
+                    document.getElementById('products-container').innerHTML = `
+                        <div class="no-products">
+                            <i class="fas fa-exclamation-triangle" style="font-size: 3rem; margin-bottom: 15px;"></i>
+                            <p>Failed to load products. Please try again later.</p>
+                        </div>
+                    `;
+                });
+        });
+        
+        // Same cart functions as in all products page
+        function addToCart(productId) {
+            console.log(`Adding product ${productId} to cart`);
+            // Implement your add to cart logic here
+            alert(`Product ${productId} added to cart!`);
+        }
+        
+        function buyNow(productId) {
+            console.log(`Buying product ${productId} now`);
+            // Implement your buy now logic here
+            alert(`Proceeding to checkout with product ${productId}!`);
+        }
+    </script>
+</body>
+</html>

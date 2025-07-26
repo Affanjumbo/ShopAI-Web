@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password | ShopAI Seller</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/sellerauth.css">
+</head>
+<body class="seller-portal">
+        <div class="auth-form-container">
+            <div class="auth-header">
+                <h2>Reset Password</h2>
+                <p id="step-info">Enter your email to receive OTP</p>
+            </div>
+            
+            <form class="auth-form" id="seller-reset-password">
+                <!-- Step 1: Email -->
+                <div id="step-email" class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="email" placeholder="Email Address" required>
+                </div>
+
+                <!-- Step 2: OTP -->
+                <div id="step-otp" class="input-group" style="display: none;">
+                    <i class="fas fa-key"></i>
+                    <input type="text" id="otp-code" placeholder="Enter OTP" maxlength="6" required>
+                </div>
+
+                <!-- Step 3: New Password -->
+                <div id="step-passwords" style="display: none;">
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="new-password" placeholder="New Password" disabled required>
+                        <i class="fas fa-eye toggle-password"></i>
+                    </div>
+                    
+                    <div class="password-strength">
+                        <div class="strength-meter">
+                            <span class="strength-bar"></span>
+                            <span class="strength-bar"></span>
+                            <span class="strength-bar"></span>
+                        </div>
+                        <div class="strength-text">Password Strength: <span id="strength-text">Weak</span></div>
+                    </div>
+                    
+                    <div class="password-requirements">
+                        <p>Password must contain:</p>
+                        <ul>
+                            <li id="req-length"><i class="fas fa-circle"></i> Minimum 8 characters</li>
+                            <li id="req-uppercase"><i class="fas fa-circle"></i> At least 1 uppercase letter</li>
+                            <li id="req-number"><i class="fas fa-circle"></i> At least 1 number</li>
+                            <li id="req-special"><i class="fas fa-circle"></i> At least 1 special character</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="confirm-password" placeholder="Confirm Password" disabled required>
+                    </div>
+                </div>
+                
+                <button type="submit" class="auth-btn" id="actionBtn">Send OTP</button>
+                
+                <div class="auth-footer">
+                    <p><a href="sellerlogin.html"><i class="fas fa-arrow-left"></i> Back to Login</a></p>
+                </div>
+            </form>
+        </div>
+        
+        <div class="auth-hero">
+            <div class="hero-content">
+                <h1>ShopAI Seller</h1>
+                <p>Secure your account with a strong password</p>
+                <div class="seller-features">
+                    <p><i class="fas fa-shield-alt"></i> 256-bit encryption</p>
+                    <p><i class="fas fa-user-lock"></i> Multi-factor authentication available</p>
+                    <p><i class="fas fa-history"></i> Password history check</p>
+                </div>
+            </div>
+        </div>
+   
+    
+    <script src="js/sellerauth.js"></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/chat.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+ <aside class="sidebar">
+     <div class="logo-container">
+         <img src="images/logo.png" alt="" />
+         ShopAI
+     </div>
+     <nav class="sidebar-nav">
+         <ul>
+            <li class="active">
+                <a href="customerpage.html">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <div class="chat-options">
+                <div class="chat-option active" data-chat-type="ai">
+                    <i class="fas fa-star"></i>
+                    <span>Support Options</span>
+                </div>
+            <div class="chat-options">
+                <div class="chat-option active" data-chat-type="ai">
+                    <i class="fas fa-robot"></i>
+                    <span>AI Assistant</span>
+                </div>
+                <div class="chat-option" data-chat-type="sales">
+                    <i class="fas fa-user-tie"></i>
+                    <span>Sales Support</span>
+                </div>
+                <div class="chat-option" data-chat-type="order">
+                    <i class="fas fa-shipping-fast"></i>
+                    <span>Order Help</span>
+                </div>
+                <div class="chat-option" data-chat-type="returns">
+                    <i class="fas fa-exchange-alt"></i>
+                    <span>Returns</span>
+                </div>
+                <div class="chat-option" data-chat-type="general">
+                    <i class="fas fa-question-circle"></i>
+                    <span>General Questions</span>
+                </div>
+            </div>
+         </ul>
+     </nav>
+     <div class="sidebar-footer">
+         <a href="logout.html" class="logout-btn">
+             <i class="fas fa-sign-out-alt"></i>
+             <span>Logout</span>
+         </a>
+     </div>
+ </aside>
+         <!-- Main Content Area -->
+         <main class="main-content">
+             <!-- Top Navigation Bar -->
+             <header class="top-nav">
+                 <div class="search-bar">
+                     <i class="fas fa-search"></i>
+                     <input type="text" placeholder="Search products...">
+                 </div>
+                 <div class="user-actions">
+                     <div class="notification">
+                         <a href="my-cart.html">
+                             <i class="fas fa-bell"></i>
+                         </a>
+                         
+                         <span class="badge">3</span>
+                     </div>
+                     <div class="user-profile">
+                         <img src="images/person.jpg" alt="User">
+                         <span>Affan Ahmed</span>
+                         <div class="chat-status">
+                            <div class="status-dot"></div>
+                            <span>Online</span>
+                        </div>
+                     </div>
+                 </div>
+                </header>
+                <div class="ai-options">
+                    <div class="ai-option" onclick="sendQuickQuestion('Where is my order?')">
+                        <i class="fas fa-box-open"></i>
+                        <span>Order Status</span>
+                    </div>
+                    <div class="ai-option" onclick="sendQuickQuestion('How can I return an item?')">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Returns</span>
+                    </div>
+                    <div class="ai-option" onclick="sendQuickQuestion('What are your delivery options?')">
+                        <i class="fas fa-truck"></i>
+                        <span>Delivery</span>
+                    </div>
+                    <div class="ai-option" onclick="sendQuickQuestion('Recommend me products based on my preferences')">
+                        <i class="fas fa-star"></i>
+                        <span>Recommendations</span>
+                    </div>
+                </div>
+        <!-- Main Chat Area -->
+        <div class="chat-main">
+            <div class="chat-header">
+                <h3 id="chatTitle">AI Assistant</h3>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <p>Hello! I'm your AI shopping assistant. How can I help you today?</p>
+                    <div class="message-time" id="current-time"></div>
+                </div>
+                <div class="message bot">
+                    <p>I can help with product recommendations, order status, returns, and more!</p>
+                    <div class="message-time" id="current-time2"></div>
+                </div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="userInput" placeholder="Type your message...">
+                <button id="sendButton"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+     <!-- Footer Section -->
+     <footer class="site-footer">
+        <div class="footer-container">
+          <!-- Payment Methods -->
+          <div class="footer-section payment-methods">
+            <h3 class="footer-heading">Payment Methods</h3>
+            <ul class="footer-list">
+              <li>JazzCash</li>
+              <li>EasyPaisa</li>
+              <li>Cash on Delivery</li>
+            </ul>
+          </div>
+  
+          <!-- Social Media -->
+          <div class="footer-section social-media">
+            <h3 class="footer-heading">Follow Us</h3>
+            <div class="social-icons">
+              <a href="https://instagram.com" target="_blank" class="social-link">
+                <img src="images/instagram.jpeg" alt="Instagram" width="32" />
+              </a>
+              <a href="https://facebook.com" target="_blank" class="social-link">
+                <img src="images/facebook.png" alt="Facebook" width="32" />
+              </a>
+              <a href="https://twitter.com" target="_blank" class="social-link">
+                <img src="images/twiter.png" alt="Twitter" width="32" />
+              </a>
+            </div>
+          </div>
+  
+          <!-- Contact Info -->
+          <div class="footer-section contact-info">
+            <h3 class="footer-heading">Contact Us</h3>
+            <ul class="footer-list">
+              <li><i class="fas fa-envelope"></i> support@shopai.com</li>
+              <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+              <li>
+                <i class="fas fa-map-marker-alt"></i> 123 ShopAI Street, Tech City
+              </li>
+            </ul>
+          </div>
+  
+          <!-- Newsletter -->
+          <div class="footer-section newsletter">
+            <h3 class="footer-heading">Newsletter</h3>
+            <p>Subscribe for updates and offers</p>
+            <form class="newsletter-form">
+              <input type="email" placeholder="Your email address" required />
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+  
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <p>&copy; 2025 ShopAI. All rights reserved.</p>
+        </div>
+      </footer>
+
+    <script src="js/chat.js"></script>
+</body>
+</html>

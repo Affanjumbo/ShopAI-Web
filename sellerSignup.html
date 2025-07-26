@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Registration | ShopAI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/sellerauth.css">
+</head>
+<body class="seller-portal">
+    <div class="auth-container">
+        <div class="auth-form-container" id="signup-form">
+            <div class="auth-header">
+                <h2>Create Seller Account</h2>
+                <p>Join our marketplace and grow your business</p>
+            </div>
+            
+            <div class="form-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="personal-tab">
+                        <i class="fas fa-user-tie"></i> Personal
+                    </button>
+                    <button class="tab-btn" data-tab="security-tab">
+                        <i class="fas fa-lock"></i> Security
+                    </button>
+                    <button class="tab-btn" data-tab="store-tab">
+                        <i class="fas fa-store"></i> Store
+                    </button>
+                    
+                    <button class="tab-btn" data-tab="bank-tab">
+                        <i class="fas fa-university"></i> Bank
+                    </button>
+                </div>
+                
+                <form class="auth-form" id="seller-signup">
+                    <!-- Personal Information Tab -->
+                    <div class="tab-content active" id="personal-tab">
+                        <div class="input-group">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="first-name" placeholder="First Name" required>
+                        </div>
+                    
+                        <div class="input-group">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="last-name" placeholder="Last Name" required>
+                        </div>
+                    
+                        <div class="input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="seller-email" placeholder="Email Address" required>
+                        </div>
+                    
+                        <div class="input-group">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel" id="seller-phone" placeholder="Phone Number" required>
+                        </div>
+
+                        <div class="input-group">
+                            <i class="fas fa-calendar"></i>
+                            <input type="date" id="seller-dob" name="seller-dob" placeholder="Date of Birth" required>
+                        </div>
+                    
+                        <div class="input-group">
+                            <i class="fas fa-city"></i>
+                            <input type="text" id="seller-city" placeholder="City" required>
+                        </div>
+                    
+                        
+
+                        <div class="tab-navigation">
+                            <button type="button" class="auth-btn next-tab" data-next="security-tab">Set Password</button>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="security-tab">
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="seller-password" placeholder="Password" required>
+                            <i class="fas fa-eye toggle-password"></i>
+                        </div>
+                        
+                        <div class="password-strength">
+                            <div class="strength-meter">
+                                <span class="strength-bar weak"></span>
+                                <span class="strength-bar medium"></span>
+                                <span class="strength-bar strong"></span>
+                            </div>
+                            <div class="strength-text">Password Strength: <span id="strength-text">Weak</span></div>
+                        </div>
+                        
+                        <div class="password-requirements">
+                            <p>Password must contain:</p>
+                            <ul>
+                                <li id="req-length"><i class="fas fa-circle"></i> Minimum 8 characters</li>
+                                <li id="req-uppercase"><i class="fas fa-circle"></i> At least 1 uppercase letter</li>
+                                <li id="req-number"><i class="fas fa-circle"></i> At least 1 number</li>
+                                <li id="req-special"><i class="fas fa-circle"></i> At least 1 special character</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="seller-confirm-password" placeholder="Confirm Password" required>
+                        </div>
+
+                        <div class="tab-navigation">
+                            <button type="button" class="auth-btn prev-tab" data-prev="personal-tab">Back</button>
+                            <button type="button" class="auth-btn next-tab" data-next="store-tab">Continue to Store Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Store Information Tab -->
+                    <div class="tab-content" id="store-tab">
+                        <div class="input-group">
+                            <i class="fas fa-signature"></i>
+                            <input type="text" id="store-name" placeholder="Store Name" required>
+                        </div>
+                        
+                        <div class="input-group">
+                            <i class="fas fa-globe"></i>
+                            <input type="url" id="store-website" placeholder="Website (optional)">
+                        </div>
+                    
+
+                        <div class="tab-navigation">
+                            <button type="button" class="auth-btn prev-tab" data-prev="security-tab">Back</button>
+                            <button type="button" class="auth-btn next-tab" data-next="bank-tab">Continue to Bank Details</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Security Tab -->
+                    
+                    
+                    <!-- Bank Information Tab -->
+                    <div class="tab-content" id="bank-tab">
+                        <div class="input-group">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="account-holder-name" placeholder="Account Holder Name" required>
+                        </div>
+                    
+                        <div class="input-group">
+                            <i class="fas fa-university"></i>
+                            <input type="text" id="bank-name" placeholder="Bank Name" required>
+                        </div>
+                    
+                        <div class="input-group">
+                            <i class="fas fa-hashtag"></i>
+                            <input type="text" id="iban" placeholder="IBAN" required>
+                        </div>
+                    
+                        <div class="input-group">
+                            <i class="fas fa-code"></i>
+                            <input type="text" id="swift-bic" placeholder="SWIFT/BIC (Optional)">
+                        </div>
+                    
+                        
+                        <div class="terms-checkbox-group">
+                            <input type="checkbox" id="terms-checkbox" required>
+                            <label for="terms-checkbox">
+                                <span class="custom-checkbox"></span>
+                                I agree to the <a href="/terms" target="_blank" class="terms-link">Terms and Conditions</a> 
+                                and <a href="/privacy" target="_blank" class="terms-link">Privacy Policy</a>
+                            </label>
+                        </div>
+                    
+                        <div class="tab-navigation">
+                            <button type="button" class="auth-btn prev-tab" data-prev="store-tab">Back</button>
+                            <button type="submit" class="auth-btn">Complete Registration</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        
+            <div class="auth-footer">
+                <p>Already have an account? <a href="sellerlogin.html" class="switch-form">Login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="auth-hero">
+        <div class="hero-content">
+            <h1>Why Sell With Us?</h1>
+            <p>Join thousands of sellers growing their business</p>
+            <div class="seller-features">
+                <p><i class="fas fa-rocket"></i> Reach millions of customers</p>
+                <p><i class="fas fa-tools"></i> Powerful seller tools</p>
+                <p><i class="fas fa-headset"></i> 24/7 seller support</p>
+                <p><i class="fas fa-percentage"></i> Competitive commissions</p>
+            </div>
+        </div>
+    </div>
+    <script src="js/sellerauth.js"></script>
+</body>
+</html>
